@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kendriu writes...</title><link href="http://kendriu.com/" rel="alternate"></link><link href="http://kendriu.com/feeds/all.atom.xml" rel="self"></link><id>http://kendriu.com/</id><updated>2015-01-08T12:30:00+01:00</updated><entry><title>Jenkins Jr – Jenkins notifications for Mac</title><link href="http://kendriu.com/jenkins-jr-jenkins-notifications-for-mac" rel="alternate"></link><updated>2015-01-08T12:30:00+01:00</updated><author><name>Andrzej Skupień</name></author><id>tag:kendriu.com,2015-01-08:jenkins-jr-jenkins-notifications-for-mac</id><summary type="html">
+&lt;!-- --&gt;
+&lt;div class="section" id="about-notifications"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;About notifications&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I like jenkins very much. If you will make mistake, he can tell you where you
+were wrong. Now here's the catch, if you don't visit jenkins enough, he is not
+helpful at all. But you can do something about it. This is the moment,
+where notification plugins comes to safe the world.&lt;/p&gt;
+&lt;p&gt;Jenkins is known from reach variety  of plugins. One type of them serves
+for notification about jobs status. But what if none of them are installed
+in your jenkins? What if you don't have rights to install any. Moreover your
+admin is asshole and you try to avoid him. Well, then I have solution for you.&lt;/p&gt;
+&lt;p&gt;If you have Mac, please meet  "Jenkins Jr".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="jenkins-jr"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Jenkins Jr&lt;/a&gt;&lt;/h2&gt;
+&lt;img alt="Jenkins Jr" src="{filename}/images/jenkins_jr.png"/&gt;
+&lt;p&gt;Idea is simple. You install "Jenkins Jr" and he checks in your name status of
+jobs. If status changes, you receive pleasant notification in Mac way.&lt;/p&gt;
+&lt;p&gt;Here how you setup - step by step.&lt;/p&gt;
+&lt;div class="section" id="installation"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id3"&gt;Installation&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Installation is easy, because Jenkins Jr is in &lt;a class="reference external" href="http://google.pl"&gt;App Store&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After installation, start Jenkins Jr. It should be visible as icon in tray.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="setup"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id4"&gt;Setup&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;First of all you have to add jobs to watch. To do that, you will need to copy
+url of jenkins job:&lt;/p&gt;
+&lt;img alt="Jenkins Jr added to Login Items" src="{filename}/images/jenkins_jr_job_url.png"/&gt;
+&lt;p&gt;Paste copied url into Jenkins Jr (&lt;em&gt;Settings -&amp;gt; Add&lt;/em&gt;):&lt;/p&gt;
+&lt;img alt="Add job to watch by Jenkins Jr" src="{filename}/images/jenkins_jr_add_job.png"/&gt;
+&lt;p&gt;In "Add" dialog box, you have also place for login and password to jenkins.&lt;/p&gt;
+&lt;p&gt;If you want Jenkins Jr to start up after every login, you have to add it
+to Login Items in your account settings. To do that go to &lt;em&gt;System Preferences
+-&amp;gt; User &amp;amp; Groups -&amp;gt; &amp;lt;Your Account&amp;gt; -&amp;gt; Login Items&lt;/em&gt; and add it from
+&lt;em&gt;Applications&lt;/em&gt; folder.&lt;/p&gt;
+&lt;img alt="Jenkins Jr added to Login Items" src="{filename}/images/jenkins_jr_login_item.png"/&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-it-looks"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id5"&gt;How it looks&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As I said, Jenkins Jr uses standard Mac notifications. After ich job run, you
+will see notification in upper right corner about build status:&lt;/p&gt;
+&lt;img alt="Jenkins Jr notification" src="{filename}/images/jenkins_jr_notification.png"/&gt;
+&lt;p&gt;You can see all notifications in Notifications area:&lt;/p&gt;
+&lt;img alt="Jenkins Jr all notifications" src="{filename}/images/jenkins_jr_all_notifications.png"/&gt;
+&lt;p&gt;If you click on one of them,
+it will open view of finished build in your browser.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="jenkins"></category><category term="mac"></category></entry></feed>
