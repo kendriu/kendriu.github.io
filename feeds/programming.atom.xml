@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kendriu writes...</title><link href="http://kendriu.com/" rel="alternate"></link><link href="http://kendriu.com/feeds/programming.atom.xml" rel="self"></link><id>http://kendriu.com/</id><updated>2015-01-08T12:30:00+01:00</updated><entry><title>Jenkins Jr – Jenkins notifications for Mac</title><link href="http://kendriu.com/jenkins-jr-jenkins-notifications-for-mac" rel="alternate"></link><updated>2015-01-08T12:30:00+01:00</updated><author><name>Andrzej Skupień</name></author><id>tag:kendriu.com,2015-01-08:jenkins-jr-jenkins-notifications-for-mac</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kendriu writes...</title><link href="http://kendriu.com/" rel="alternate"></link><link href="http://kendriu.com/feeds/programming.atom.xml" rel="self"></link><id>http://kendriu.com/</id><updated>2015-01-08T12:30:00+01:00</updated><entry><title>How to use pipes in python subprocess.Popen objects</title><link href="http://kendriu.com/how-to-use-pipes-in-python-subprocesspopen-objects" rel="alternate"></link><updated>2015-01-08T12:30:00+01:00</updated><author><name>Andrzej Skupień</name></author><id>tag:kendriu.com,2015-01-08:how-to-use-pipes-in-python-subprocesspopen-objects</id><summary type="html">
+&lt;!-- --&gt;
+&lt;p&gt;This is something, that I always have to check. So today I'm writing it down.&lt;/p&gt;
+&lt;p&gt;Documentation to subprocess.Popen is &lt;a class="reference external" href="https://docs.python.org/2/library/subprocess.html#subprocess.Popen"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So pipelines are useful when you want to do something with output of command
+performed by Popen. What you would like to do with output:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;pass it to another bash command&lt;/li&gt;
+&lt;li&gt;use it inside Python script&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="section" id="pass-output-to-another-bash-command"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;Pass output to another bash command&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;So you want to pass output of first bash command to another. This will be
+equivalent of this code in bash:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ls /etc &lt;span class="p"&gt;|&lt;/span&gt; grep ntp
+ntp-restrict.conf
+ntp.conf
+ntp_opendirectory.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In Python you do that like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;p1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'ls /etc'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;p2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'grep ntp'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;p1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;communicate&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="alternative-to-communicate-function"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Alternative to communicate function&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Instead of  "communicate" function you can use "read" on stdout of subprocess.
+But first you have to wait for end of subprocess call&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gp"&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wait&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="gp"&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Although this way have one disadvantage. It moves file pointer do the end of file.
+So every subsequent call will return empty string:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="gp"&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wait&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="gp"&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="go"&gt;ntp-restrict.conf&lt;/span&gt;
+&lt;span class="go"&gt;ntp.conf&lt;/span&gt;
+&lt;span class="go"&gt;ntp_opendirectory.conf&lt;/span&gt;
+&lt;span class="gp"&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="go"&gt;''&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="python"></category><category term="popen"></category></entry><entry><title>Jenkins Jr – Jenkins notifications for Mac</title><link href="http://kendriu.com/jenkins-jr-jenkins-notifications-for-mac" rel="alternate"></link><updated>2015-01-08T12:30:00+01:00</updated><author><name>Andrzej Skupień</name></author><id>tag:kendriu.com,2015-01-08:jenkins-jr-jenkins-notifications-for-mac</id><summary type="html">
 &lt;!-- --&gt;
 &lt;div class="section" id="about-notifications"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id1"&gt;About notifications&lt;/a&gt;&lt;/h2&gt;
