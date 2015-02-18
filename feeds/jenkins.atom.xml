@@ -40,7 +40,7 @@ to Login Items in your account settings. To do that go to &lt;em&gt;System Prefe
 &lt;/div&gt;
 &lt;div class="section" id="how-it-looks"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id5"&gt;How it looks&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;As I said, Jenkins Jr uses standard Mac notifications. After ich job run, you
+&lt;p&gt;As I said, Jenkins Jr uses standard Mac notifications. After each job run, you
 will see notification in upper right corner about build status:&lt;/p&gt;
 &lt;img alt="Jenkins Jr notification" src="/images/jenkins_jr_notification.png"/&gt;
 &lt;p&gt;You can see all notifications in Notifications area:&lt;/p&gt;
