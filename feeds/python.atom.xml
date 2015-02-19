@@ -43,7 +43,7 @@ So every subsequent call will return empty string:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Further more this has one more disadvantage. According to &lt;a class="reference external" href="http://gedmin.as"&gt;Marius Gedminas&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
-if you first wait() and then read() a program that produces a lot of
+&lt;strong&gt;Careful&lt;/strong&gt;: if you first wait() and then read() a program that produces a lot of
 output (more than 4 kilobytes), you'll get a deadlock&lt;/blockquote&gt;
 &lt;p&gt;Marius thank  you for the update.&lt;/p&gt;
 &lt;/div&gt;
