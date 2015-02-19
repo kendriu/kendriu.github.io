@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kendriu writes...</title><link href="http://kendriu.com/" rel="alternate"></link><link href="http://kendriu.com/feeds/all.atom.xml" rel="self"></link><id>http://kendriu.com/</id><updated>2015-02-16T19:39:00+01:00</updated><entry><title>How to use pipes in python subprocess.Popen objects</title><link href="http://kendriu.com/how-to-use-pipes-in-python-subprocesspopen-objects" rel="alternate"></link><updated>2015-02-16T19:39:00+01:00</updated><author><name>Andrzej Skupień</name></author><id>tag:kendriu.com,2015-02-16:how-to-use-pipes-in-python-subprocesspopen-objects</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kendriu writes...</title><link href="http://kendriu.com/" rel="alternate"></link><link href="http://kendriu.com/feeds/all.atom.xml" rel="self"></link><id>http://kendriu.com/</id><updated>2015-02-19T00:00:00+01:00</updated><entry><title>How to use pipes in python subprocess.Popen objects</title><link href="http://kendriu.com/how-to-use-pipes-in-python-subprocesspopen-objects" rel="alternate"></link><updated>2015-02-19T00:00:00+01:00</updated><author><name>Andrzej Skupień</name></author><id>tag:kendriu.com,2015-02-16:how-to-use-pipes-in-python-subprocesspopen-objects</id><summary type="html">
 &lt;!-- --&gt;
 &lt;p&gt;This is something, that I always have to check. So today I'm writing it down.&lt;/p&gt;
 &lt;p&gt;Documentation to subprocess.Popen is &lt;a class="reference external" href="https://docs.python.org/2/library/subprocess.html#subprocess.Popen"&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -41,6 +41,11 @@ So every subsequent call will return empty string:&lt;/p&gt;
 &lt;span class="gp"&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class="n"&gt;p2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="go"&gt;''&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Further more this has one more disadvantage. According to &lt;a class="reference external" href="http://gedmin.as"&gt;Marius Gedminas&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+if you first wait() and then read() a program that produces a lot of
+output (more than 4 kilobytes), you'll get a deadlock&lt;/blockquote&gt;
+&lt;p&gt;Marius thank  you for the update.&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="python"></category><category term="popen"></category></entry><entry><title>Jenkins Jr – Jenkins notifications for Mac</title><link href="http://kendriu.com/jenkins-jr-jenkins-notifications-for-mac" rel="alternate"></link><updated>2015-01-08T12:30:00+01:00</updated><author><name>Andrzej Skupień</name></author><id>tag:kendriu.com,2015-01-08:jenkins-jr-jenkins-notifications-for-mac</id><summary type="html">
 &lt;!-- --&gt;
