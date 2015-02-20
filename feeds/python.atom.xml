@@ -47,4 +47,4 @@ So every subsequent call will return empty string:&lt;/p&gt;
 output (more than 4 kilobytes), you'll get a deadlock&lt;/blockquote&gt;
 &lt;p&gt;Marius thank  you for the update.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="python"></category><category term="popen"></category></entry></feed>
+</summary><category term="python"></category><category term="popen"></category><category term="pipe"></category></entry></feed>
