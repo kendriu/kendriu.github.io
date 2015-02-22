@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://kendriu.com/</loc>
-<lastmod>2015-02-20T17:37:43-00:00</lastmod>
+<lastmod>2015-02-22T09:22:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kendriu.com/archives.html</loc>
-<lastmod>2015-02-20T17:37:43-00:00</lastmod>
+<lastmod>2015-02-22T09:22:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kendriu.com/tags.html</loc>
-<lastmod>2015-02-20T17:37:43-00:00</lastmod>
+<lastmod>2015-02-22T09:22:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kendriu.com/categories.html</loc>
-<lastmod>2015-02-20T17:37:43-00:00</lastmod>
+<lastmod>2015-02-22T09:22:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://kendriu.com/how-to-use-pipes-in-python-subprocesspopen-objects</loc>
-<lastmod>2015-02-19T00:00:00+01:00</lastmod>
+<lastmod>2015-02-22T00:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
