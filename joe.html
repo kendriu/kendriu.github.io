@@ -10,18 +10,18 @@
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="jenkins, mac, Programming, " />
+<meta name="keywords" content="python, git, gitignore, Programming, " />
 
-<meta property="og:title" content="Jenkins Jr – Jenkins notifications for Mac "/>
-<meta property="og:url" content="http://kendriu.com/jenkins-jr-jenkins-notifications-for-mac" />
-<meta property="og:description" content="How to set notifications about jenkins job build status on your Mac OS" />
+<meta property="og:title" content="Joe  - Easy templates for .gitignore "/>
+<meta property="og:url" content="http://kendriu.com/joe" />
+<meta property="og:description" content="Tool for generating .gitignore" />
 <meta property="og:site_name" content="kendriu writes..." />
 <meta property="og:article:author" content="Andrzej Skupień" />
-<meta property="og:article:published_time" content="2015-01-08T12:30:00+01:00" />
-<meta name="twitter:title" content="Jenkins Jr – Jenkins notifications for Mac ">
-<meta name="twitter:description" content="How to set notifications about jenkins job build status on your Mac OS">
+<meta property="og:article:published_time" content="2015-02-24T19:39:00+01:00" />
+<meta name="twitter:title" content="Joe  - Easy templates for .gitignore ">
+<meta name="twitter:description" content="Tool for generating .gitignore">
 
-        <title>Jenkins Jr – Jenkins notifications for Mac  · kendriu writes...
+        <title>Joe  - Easy templates for .gitignore  · kendriu writes...
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -79,7 +79,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="http://kendriu.com/jenkins-jr-jenkins-notifications-for-mac"> Jenkins Jr &ndash; Jenkins notifications for Mac  </a></h1>
+    <h1><a href="http://kendriu.com/joe"> Joe  <small> Easy templates for .gitignore </small>  </a></h1>
     </header>
 </div>
 
@@ -90,13 +90,8 @@
         <div class="toc" id="">
 
 <ul class="simple">
-<li><a class="reference internal" href="#about-notifications" id="id1">About notifications</a></li>
-<li><a class="reference internal" href="#jenkins-jr" id="id2">Jenkins Jr</a><ul>
-<li><a class="reference internal" href="#installation" id="id3">Installation</a></li>
-<li><a class="reference internal" href="#setup" id="id4">Setup</a></li>
-<li><a class="reference internal" href="#how-it-looks" id="id5">How it looks</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#problem" id="id2">Problem</a></li>
+<li><a class="reference internal" href="#but-have-no-fear-joe-is-here" id="id3">But have no fear Joe is here.</a></li>
 </ul>
 </div>
         </nav>
@@ -106,65 +101,98 @@
             
             
 <!-- -->
-<div class="section" id="about-notifications">
-<h2><a class="toc-backref" href="#id1">About notifications</a></h2>
-<p>I like jenkins very much. If you will make mistake, he can tell you where you
-were wrong. Now here's the catch, if you don't visit jenkins enough, he is not
-helpful at all. But you can do something about it. This is the moment,
-where notification plugins comes to safe the world.</p>
-<p>Jenkins is known from reach variety  of plugins. One type of them serves
-for notification about jobs status. But what if none of them are installed
-in your jenkins? What if you don't have rights to install any. Moreover your
-admin is asshole and you try to avoid him. Well, then I have solution for you.</p>
-<p>If you have Mac, please meet  "Jenkins Jr".</p>
+<p>In this article I write about <a class="reference external" href="https://github.com/karan/joe">Joe</a> – Python tool that makes
+creating .gitignore files much easier.</p>
+<img alt="Joe" src="https://camo.githubusercontent.com/d629d9cab221ad378f07d38f00e34b11cab5e299/687474703a2f2f692e696d6775722e636f6d2f7938673530366e2e706e673f31"/>
+<div class="section" id="problem">
+<h2><a class="toc-backref" href="#id2">Problem</a></h2>
+<p>Every time I create new project, there comes time, when I want to put it under
+git control and do the first commit:</p>
+<div class="highlight"><pre><span class="nv">$ </span>git init
+Initialized empty Git repository in &lt;/path/to/directory&gt;
+<span class="nv">$ </span>git status <span class="c"># good practice - check before commit</span>
+<span class="c"># (...)</span>
+Untracked files:
+<span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="o">)</span>
+__init__.pyc
+__pycache__/
+openstack.pyc
+test.py
+</pre></div>
+<p>In this moment I realize that I have forgot to add .gitignore. And to be honest,
+hate to do this. What should I place there? Should I put this __pycache__ folder too?</p>
 </div>
-<div class="section" id="jenkins-jr">
-<h2><a class="toc-backref" href="#id2">Jenkins Jr</a></h2>
-<img alt="Jenkins Jr" src="/images/jenkins_jr.png"/>
-<p>Idea is simple. You install "Jenkins Jr" and he checks in your name status of
-jobs. If status changes, you receive pleasant notification in Mac way.</p>
-<p>Here how you setup - step by step.</p>
-<div class="section" id="installation">
-<h3><a class="toc-backref" href="#id3">Installation</a></h3>
-<p>Installation is easy, because Jenkins Jr is in <a class="reference external" href="http://google.pl">App Store</a>.</p>
-<p>After installation, start Jenkins Jr. It should be visible as icon in tray.</p>
-</div>
-<div class="section" id="setup">
-<h3><a class="toc-backref" href="#id4">Setup</a></h3>
-<p>First of all you have to add jobs to watch. To do that, you will need to copy
-url of jenkins job:</p>
-<img alt="Jenkins Jr added to Login Items" src="/images/jenkins_jr_job_url.png"/>
-<p>Paste copied url into Jenkins Jr (<em>Settings -&gt; Add</em>):</p>
-<img alt="Add job to watch by Jenkins Jr" src="/images/jenkins_jr_add_job.png"/>
-<p>In "Add" dialog box, you have also place for login and password to jenkins.</p>
-<p>If you want Jenkins Jr to start up after every login, you have to add it
-to Login Items in your account settings. To do that go to <em>System Preferences
--&gt; User &amp; Groups -&gt; &lt;Your Account&gt; -&gt; Login Items</em> and add it from
-<em>Applications</em> folder.</p>
-<img alt="Jenkins Jr added to Login Items" src="/images/jenkins_jr_login_item.png"/>
-</div>
-<div class="section" id="how-it-looks">
-<h3><a class="toc-backref" href="#id5">How it looks</a></h3>
-<p>As I said, Jenkins Jr uses standard Mac notifications. After each job run, you
-will see notification in upper right corner about build status:</p>
-<img alt="Jenkins Jr notification" src="/images/jenkins_jr_notification.png"/>
-<p>You can see all notifications in Notifications area:</p>
-<img alt="Jenkins Jr all notifications" src="/images/jenkins_jr_all_notifications.png"/>
-<p>If you click on one of them,
-it will open view of finished build in your browser.</p>
-</div>
+<div class="section" id="but-have-no-fear-joe-is-here">
+<h2>But have no fear Joe is <a class="reference external" href="https://github.com/karan/joe">here</a>.</h2>
+<p><a class="reference external" href="https://github.com/karan/joe">Joe</a> will generate .gitignore for you:</p>
+<div class="highlight"><pre><span class="nv">$ </span>joe python &gt; .gitignore
+<span class="nv">$ </span>cat .gitignore
+<span class="c">### joe made this: https://goel.io/joe</span>
+
+<span class="c">#####=== Python ===#####</span>
+
+<span class="c"># Byte-compiled / optimized / DLL files</span>
+__pycache__
+<span class="se">\*</span>.py<span class="o">[</span>cod<span class="o">]</span>
+
+<span class="c"># C extensions</span>
+*.so
+
+<span class="c"># Distribution / packaging</span>
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+<span class="c">#( ... )</span>
+</pre></div>
+<p>Joe can create gitignore rules for many other files:</p>
+<div class="highlight"><pre><span class="nv">$ </span>joe list
+actionscript, ada, agda, android, anjuta, appceleratortitanium, archives,
+archlinuxpackages, autotools, bricxcc, c, c++, cakephp, cfwheels,
+chefcookbook, clojure, cloud9, cmake, codeigniter, codekit, commonlisp,
+composer, concrete5, coq, craftcms, cvs, dart, darteditor, delphi, dm,
+dreamweaver, drupal, eagle, eclipse, eiffelstudio, elisp, elixir, emacs,
+ensime, episerver, erlang, espresso, expressionengine, extjs, fancy, finale,
+flexbuilder, forcedotcom, fortran, fuelphp, gcov, gitbook, go, gradle,
+grails, gwt, haskell, idris, igorpro, ipythonnotebook, java, jboss,
+jdeveloper, jekyll, jetbrains, joomla, jython, kate, kdevelop4, kohana,
+labview, laravel, lazarus, leiningen, lemonstand, libreoffice, lilypond,
+linux, lithium, lua, lyx, magento, matlab, maven, mercurial, mercury,
+metaprogrammingsystem, meteor, microsoftoffice, modelsim, momentics,
+monodevelop, nanoc, netbeans, nim, ninja, node, notepadpp, objective-c,
+ocaml, opa, opencart, oracleforms, osx, packer, perl, phalcon, playframework,
+plone, prestashop, processing, python, qooxdoo, qt, r, rails, redcar, redis,
+rhodesrhomobile, ros, ruby, rust, sass, sbt, scala, scons, scrivener, sdcc,
+seamgen, sketchup, slickedit, stella, sublimetext, sugarcrm, svn, swift,
+symfony, symphonycms, tags, tex, textmate, textpattern, tortoisegit,
+turbogears2, typo3, umbraco, unity, vagrant, vim, virtualenv, visualstudio,
+vvvv, waf, webmethods, windows, wordpress, xcode, xilinxise, xojo, yeoman,
+yii, zendframework, zephir
+</pre></div>
+<p>So if you are convinced, you will find Joe <a class="reference external" href="https://github.com/karan/joe">here</a></p>
 </div>
 
             <section>
     <p id="post-share-links">
     Like this post? Share on:
-    <a href="http://twitter.com/home?status=Jenkins%20Jr%20%E2%80%93%20Jenkins%20notifications%20for%20Mac%20http%3A//kendriu.com/jenkins-jr-jenkins-notifications-for-mac" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="http://twitter.com/home?status=Joe%20Easy%20templates%20for%20.gitignore%20http%3A//kendriu.com/joe" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=http%3A//kendriu.com/jenkins-jr-jenkins-notifications-for-mac" target="_blank" title="Share on Facebook">Facebook</a>
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=http%3A//kendriu.com/joe" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="https://plus.google.com/share?url=http%3A//kendriu.com/jenkins-jr-jenkins-notifications-for-mac" target="_blank" title="Share on Google Plus">Google+</a>
+    <a href="https://plus.google.com/share?url=http%3A//kendriu.com/joe" target="_blank" title="Share on Google Plus">Google+</a>
     ❄
-    <a href="mailto:?subject=Jenkins%20Jr%20%E2%80%93%20Jenkins%20notifications%20for%20Mac&amp;body=http%3A//kendriu.com/jenkins-jr-jenkins-notifications-for-mac" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Joe%20Easy%20templates%20for%20.gitignore&amp;body=http%3A//kendriu.com/joe" target="_blank" title="Share via Email">Email</a>
     </p>
 </section>
 
@@ -174,8 +202,8 @@ it will open view of finished build in your browser.</p>
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                    data-disqus-identifier="jenkins_jr"
-                href="http://kendriu.com/jenkins-jr-jenkins-notifications-for-mac#disqus_thread">
+                    data-disqus-identifier="joe"
+                href="http://kendriu.com/joe#disqus_thread">
                 Comments
             </a>
         </div>
@@ -185,8 +213,8 @@ it will open view of finished build in your browser.</p>
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'kendriu';
-        var disqus_identifier = 'jenkins_jr';
-    var disqus_url = 'http://kendriu.com/jenkins-jr-jenkins-notifications-for-mac';
+        var disqus_identifier = 'joe';
+    var disqus_url = 'http://kendriu.com/joe';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -205,10 +233,17 @@ it will open view of finished build in your browser.</p>
 </section>
 
             <hr/>
+<section>
+    <h2>Keep Reading</h2>
+<ul class="related-posts-list">
+<li><a href="http://kendriu.com/how-to-use-pipes-in-python-subprocesspopen-objects" title="How to use PIPE in python subprocess.Popen objects">How to use PIPE in python subprocess.Popen objects</a></li>
+</ul>
+<hr />
+</section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="next-article"><a href="http://kendriu.com/how-to-use-pipes-in-python-subprocesspopen-objects" title="Next: How to use PIPE in python subprocess.Popen objects">How to use PIPE in python subprocess.Popen objects</a> »</li>
+                <li class="previous-article">« <a href="http://kendriu.com/how-to-use-pipes-in-python-subprocesspopen-objects" title="Previous: How to use PIPE in python subprocess.Popen objects">How to use PIPE in python subprocess.Popen objects</a></li>
             </ul>
             </nav>
             </aside>
@@ -216,16 +251,19 @@ it will open view of finished build in your browser.</p>
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
             <h4>Published</h4>
-            <time pubdate="pubdate" datetime="2015-01-08T12:30:00+01:00">sty 8, 2015</time>
+            <time pubdate="pubdate" datetime="2015-02-24T19:39:00+01:00">lut 24, 2015</time>
             <h4>Category</h4>
             <a class="category-link" href="http://kendriu.com/categories.html#programming-ref">Programming</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="http://kendriu.com/tags.html#jenkins-ref">jenkins
+                <li><a href="http://kendriu.com/tags.html#git-ref">git
                     <span>1</span>
 </a></li>
-                <li><a href="http://kendriu.com/tags.html#mac-ref">mac
+                <li><a href="http://kendriu.com/tags.html#gitignore-ref">gitignore
                     <span>1</span>
+</a></li>
+                <li><a href="http://kendriu.com/tags.html#python-ref">python
+                    <span>2</span>
 </a></li>
             </ul>
 <h4>Stay in Touch</h4>

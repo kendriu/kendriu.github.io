@@ -15,7 +15,7 @@ admin is asshole and you try to avoid him. Well, then I have solution for you.&l
 &lt;/div&gt;
 &lt;div class="section" id="jenkins-jr"&gt;
 &lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Jenkins Jr&lt;/a&gt;&lt;/h2&gt;
-&lt;img alt="Jenkins Jr" src="/images/jenkins_jr.png" style="width: 196px; height: auto; max-width: 100%;"/&gt;
+&lt;img alt="Jenkins Jr" src="/images/jenkins_jr.png"/&gt;
 &lt;p&gt;Idea is simple. You install "Jenkins Jr" and he checks in your name status of
 jobs. If status changes, you receive pleasant notification in Mac way.&lt;/p&gt;
 &lt;p&gt;Here how you setup - step by step.&lt;/p&gt;
@@ -28,23 +28,23 @@ jobs. If status changes, you receive pleasant notification in Mac way.&lt;/p&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id4"&gt;Setup&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;First of all you have to add jobs to watch. To do that, you will need to copy
 url of jenkins job:&lt;/p&gt;
-&lt;img alt="Jenkins Jr added to Login Items" src="/images/jenkins_jr_job_url.png" style="width: 1522px; height: auto; max-width: 100%;"/&gt;
+&lt;img alt="Jenkins Jr added to Login Items" src="/images/jenkins_jr_job_url.png"/&gt;
 &lt;p&gt;Paste copied url into Jenkins Jr (&lt;em&gt;Settings -&amp;gt; Add&lt;/em&gt;):&lt;/p&gt;
-&lt;img alt="Add job to watch by Jenkins Jr" src="/images/jenkins_jr_add_job.png" style="width: 913px; height: auto; max-width: 100%;"/&gt;
+&lt;img alt="Add job to watch by Jenkins Jr" src="/images/jenkins_jr_add_job.png"/&gt;
 &lt;p&gt;In "Add" dialog box, you have also place for login and password to jenkins.&lt;/p&gt;
 &lt;p&gt;If you want Jenkins Jr to start up after every login, you have to add it
 to Login Items in your account settings. To do that go to &lt;em&gt;System Preferences
 -&amp;gt; User &amp;amp; Groups -&amp;gt; &amp;lt;Your Account&amp;gt; -&amp;gt; Login Items&lt;/em&gt; and add it from
 &lt;em&gt;Applications&lt;/em&gt; folder.&lt;/p&gt;
-&lt;img alt="Jenkins Jr added to Login Items" src="/images/jenkins_jr_login_item.png" style="width: 1336px; height: auto; max-width: 100%;"/&gt;
+&lt;img alt="Jenkins Jr added to Login Items" src="/images/jenkins_jr_login_item.png"/&gt;
 &lt;/div&gt;
 &lt;div class="section" id="how-it-looks"&gt;
 &lt;h3&gt;&lt;a class="toc-backref" href="#id5"&gt;How it looks&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;As I said, Jenkins Jr uses standard Mac notifications. After each job run, you
 will see notification in upper right corner about build status:&lt;/p&gt;
-&lt;img alt="Jenkins Jr notification" src="/images/jenkins_jr_notification.png" style="width: 707px; height: auto; max-width: 100%;"/&gt;
+&lt;img alt="Jenkins Jr notification" src="/images/jenkins_jr_notification.png"/&gt;
 &lt;p&gt;You can see all notifications in Notifications area:&lt;/p&gt;
-&lt;img alt="Jenkins Jr all notifications" src="/images/jenkins_jr_all_notifications.png" style="width: 692px; height: auto; max-width: 100%;"/&gt;
+&lt;img alt="Jenkins Jr all notifications" src="/images/jenkins_jr_all_notifications.png"/&gt;
 &lt;p&gt;If you click on one of them,
 it will open view of finished build in your browser.&lt;/p&gt;
 &lt;/div&gt;

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kendriu writes...</title><link href="http://kendriu.com/" rel="alternate"></link><link href="http://kendriu.com/feeds/git.atom.xml" rel="self"></link><id>http://kendriu.com/</id><updated>2015-02-24T19:39:00+01:00</updated><entry><title>Joe</title><link href="http://kendriu.com/joe" rel="alternate"></link><updated>2015-02-24T19:39:00+01:00</updated><author><name>Andrzej Skupień</name></author><id>tag:kendriu.com,2015-02-24:joe</id><summary type="html">
+&lt;!-- --&gt;
+&lt;p&gt;In this article I write about &lt;a class="reference external" href="https://github.com/karan/joe"&gt;Joe&lt;/a&gt; – Python tool that makes
+creating .gitignore files much easier.&lt;/p&gt;
+&lt;img alt="Joe" src="https://camo.githubusercontent.com/d629d9cab221ad378f07d38f00e34b11cab5e299/687474703a2f2f692e696d6775722e636f6d2f7938673530366e2e706e673f31"/&gt;
+&lt;div class="section" id="problem"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id2"&gt;Problem&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Every time I create new project, there comes time, when I want to put it under
+git control and do the first commit:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;git init
+Initialized empty Git repository in &amp;lt;/path/to/directory&amp;gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;git status &lt;span class="c"&gt;# good practice - check before commit&lt;/span&gt;
+&lt;span class="c"&gt;# (...)&lt;/span&gt;
+Untracked files:
+&lt;span class="o"&gt;(&lt;/span&gt;use &lt;span class="s2"&gt;"git add &amp;lt;file&amp;gt;..."&lt;/span&gt; to include in what will be committed&lt;span class="o"&gt;)&lt;/span&gt;
+__init__.pyc
+__pycache__/
+openstack.pyc
+test.py
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this moment I realize that I have forgot to add .gitignore. And to be honest,
+hate to do this. What should I place there? Should I put this __pycache__ folder too?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="but-have-no-fear-joe-is-here"&gt;
+&lt;h2&gt;But have no fear Joe is &lt;a class="reference external" href="https://github.com/karan/joe"&gt;here&lt;/a&gt;.&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/karan/joe"&gt;Joe&lt;/a&gt; will generate .gitignore for you:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;joe python &amp;gt; .gitignore
+&lt;span class="nv"&gt;$ &lt;/span&gt;cat .gitignore
+&lt;span class="c"&gt;### joe made this: https://goel.io/joe&lt;/span&gt;
+
+&lt;span class="c"&gt;#####=== Python ===#####&lt;/span&gt;
+
+&lt;span class="c"&gt;# Byte-compiled / optimized / DLL files&lt;/span&gt;
+__pycache__
+&lt;span class="se"&gt;\*&lt;/span&gt;.py&lt;span class="o"&gt;[&lt;/span&gt;cod&lt;span class="o"&gt;]&lt;/span&gt;
+
+&lt;span class="c"&gt;# C extensions&lt;/span&gt;
+*.so
+
+&lt;span class="c"&gt;# Distribution / packaging&lt;/span&gt;
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+&lt;span class="c"&gt;#( ... )&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Joe can create gitignore rules for many other files:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;joe list
+actionscript, ada, agda, android, anjuta, appceleratortitanium, archives,
+archlinuxpackages, autotools, bricxcc, c, c++, cakephp, cfwheels,
+chefcookbook, clojure, cloud9, cmake, codeigniter, codekit, commonlisp,
+composer, concrete5, coq, craftcms, cvs, dart, darteditor, delphi, dm,
+dreamweaver, drupal, eagle, eclipse, eiffelstudio, elisp, elixir, emacs,
+ensime, episerver, erlang, espresso, expressionengine, extjs, fancy, finale,
+flexbuilder, forcedotcom, fortran, fuelphp, gcov, gitbook, go, gradle,
+grails, gwt, haskell, idris, igorpro, ipythonnotebook, java, jboss,
+jdeveloper, jekyll, jetbrains, joomla, jython, kate, kdevelop4, kohana,
+labview, laravel, lazarus, leiningen, lemonstand, libreoffice, lilypond,
+linux, lithium, lua, lyx, magento, matlab, maven, mercurial, mercury,
+metaprogrammingsystem, meteor, microsoftoffice, modelsim, momentics,
+monodevelop, nanoc, netbeans, nim, ninja, node, notepadpp, objective-c,
+ocaml, opa, opencart, oracleforms, osx, packer, perl, phalcon, playframework,
+plone, prestashop, processing, python, qooxdoo, qt, r, rails, redcar, redis,
+rhodesrhomobile, ros, ruby, rust, sass, sbt, scala, scons, scrivener, sdcc,
+seamgen, sketchup, slickedit, stella, sublimetext, sugarcrm, svn, swift,
+symfony, symphonycms, tags, tex, textmate, textpattern, tortoisegit,
+turbogears2, typo3, umbraco, unity, vagrant, vim, virtualenv, visualstudio,
+vvvv, waf, webmethods, windows, wordpress, xcode, xilinxise, xojo, yeoman,
+yii, zendframework, zephir
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So if you are convinced, you will find Joe &lt;a class="reference external" href="https://github.com/karan/joe"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="python"></category><category term="git"></category><category term="gitignore"></category></entry></feed>
